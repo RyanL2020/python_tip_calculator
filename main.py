@@ -10,15 +10,18 @@
 # round guest_split_number 2 decimal spaces
 print("Welcome to the tip calculator!")
 
-total_bill = input("How much is the bill?")
-total_bill_number = int(total_bill)
+bill = float(input("How much is the bill?"))
 
-percent_tip = input("How much tip would you like to give? 10, 12, or 15?")
-percent_tip_number = int(percent_tip)
 
-guest_split = input("How many people to split the bill?")
-guest_split_number = int(guest_split)
+percent_tip = int(input("How much tip would you like to give? 10, 12, or 15?"))
 
-result = (total_bill_number / guest_split_number) * 1.12
-result_rounded = round(result, 2)
+
+guest_split = int(input("How many splitting the bill?"))
+
+bill_with_tip = percent_tip / 100 * bill + bill
+
+result = bill_with_tip / guest_split
+# result_rounded = round(result, 2)
+result_rounded = "{:.2f}".format(result)
+
 print(f"Everyone pays: {result_rounded}")
